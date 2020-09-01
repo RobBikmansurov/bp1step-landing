@@ -1,0 +1,24 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rsync
+        run: |
+          set -eu
+          mkdir "$HOME/.ssh"
+          echo "${{ secrets.PRIVATE_KEY }}" > "$HOME/.ssh/key"
+          chmod 600 "$HOME/.ssh/key"
+          rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" \
+            --archive --compress --omit-dir-times \
+            --exclude /deploy_key \
+            --exclude /.git/ \
+            --exclude /.github/ \
+            --exclude /node_modules/ \
+            ./ deploy@bp1step.bikmansurov.ru:/var/www/html/bikmansurov/bp1step/
