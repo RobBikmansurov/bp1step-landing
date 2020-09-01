@@ -1,0 +1,66 @@
+
+html, body {
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+.warpper {
+  padding: 50px;
+}
+
+.block {
+
+}
+
+.block__item {
+  padding: 0 0 20px 0;
+}
+
+.block__title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+/* стрелки */
+.block__title:before,
+.block__title:after {
+  content: '';
+  width: 10px;
+  height: 1px;  /*толщина стрелки*/
+  background-color: #000;
+  position: absolute;
+  top: 7px;
+  transition: all 0.3s ease 0s; /*для плавной смены направления стрелки*/
+}
+
+.block__title:before {
+  transform: rotate(40deg);
+  left: 0;
+}
+
+.block__title:after {
+  transform: rotate(-40deg);
+  left: 8px;
+}
+
+.block__title.active:before,
+.block__title.active:after {
+  background-color: darkred;
+}
+
+.block__title.active:before {
+  transform: rotate(-40deg);
+}
+
+.block__title.active:after {
+  transform: rotate(40deg);
+}
+
+.block__text {
+  padding: 10px 0 0 0;
+  display: none;
+}
