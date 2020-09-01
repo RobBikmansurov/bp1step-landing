@@ -1,17 +1,71 @@
-
-html, body {
-  height: 100%;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.warpper {
-  padding: 50px;
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.block {
-
+.wrapper {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1170px;
 }
+
+.what, .benefits, .about_us, .get_free, .contacts, footer {
+    padding: 60px 0;
+}
+
+/* menu */
+.main-menu {
+    margin-left: auto;
+}
+
+.main-menu > ul > li {
+    display: inline-block;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: tomato;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.main-menu > ul > li > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-menu > ul > li:last-child {
+    margin-right: 0;
+}
+
+.main-menu > ul > li::after {
+    content: '';
+    width: 10%;
+    height: 3px;
+    background: #00D5C3;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 25px;
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+.main-menu > ul > li:hover::after {
+    opacity: 1;
+    width: 100%;
+}
+
+
+
+/* спойлер гармошка */
 
 .block__item {
   padding: 0 0 20px 0;
