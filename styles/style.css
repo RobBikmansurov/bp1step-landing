@@ -199,11 +199,9 @@ header > .main-wrapper {
 .card__text {
   padding: 0.5em;
 }
-
-
-
-
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
+.card__summary {
+  color: white;
+  background-color: dimgrey;
+  height: 5em;
 }
+
